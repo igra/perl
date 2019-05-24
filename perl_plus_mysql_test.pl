@@ -19,12 +19,14 @@ sub get_last_id {
 sub insert_new_row {
     my ($id, $technology) = @_;
 
+    $id = $id % 2 == 0 ? $id+1 : $id; // only odd numbers as ids
+
     my $stmt = $dbh->prepare("insert into jobs(job_id, job_title) values($id, '$technology');");
     $stmt->execute or die "error to perform sql query";
 }
 
 sub select_all_rows() {
-    my $stmt = $dbh->prepare("select * from jobs order by job_id desc");
+    my $stmt = $dbh->prepare("select * from jobs order by job_id asc");
     $stmt->execute
         or die "error to perform sql query";
     return $stmt->fetchall_arrayref();
