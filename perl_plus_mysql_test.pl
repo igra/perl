@@ -19,7 +19,7 @@ sub get_last_id {
 sub insert_new_row {
     my ($id, $technology) = @_;
 
-    $id = $id % 2 == 0 ? $id+1 : $id; // only odd numbers as ids
+    $id = $id % 2 == 0 ? $id+1 : $id; # only odd numbers as ids
 
     my $stmt = $dbh->prepare("insert into jobs(job_id, job_title) values($id, '$technology');");
     $stmt->execute or die "error to perform sql query";
