@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-
 use strict;
 use warnings;
 
@@ -23,8 +22,8 @@ sub plusMinus {
    }
 
    my $total = scalar @arr;
-   print divide($positive, $total), " ",
-         divide($negative, $total), " ",
+   print divide($positive, $total), "\n",
+         divide($negative, $total), "\n",
          divide($neutral, $total), "\n";
 }
 
