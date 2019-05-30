@@ -25,7 +25,7 @@ sub insert_new_row {
     $stmt->execute or die "error to perform sql query";
 }
 
-sub select_all_rows() {
+sub select_all_rows {
     my $stmt = $dbh->prepare("select * from jobs order by job_id asc");
     $stmt->execute
         or die "error to perform sql query";
