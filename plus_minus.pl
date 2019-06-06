@@ -2,7 +2,6 @@
 use strict;
 use warnings;
 
-# Complete the plusMinus function below.
 sub plusMinus {
    my $arr = shift;
    my @arr = @{$arr};
